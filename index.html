@@ -3,114 +3,559 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stay in Santa Teresa | Villas & Rentals</title>
-  <meta name="description" content="Discover curated villas, surf stays, and jungle homes in Santa Teresa, Costa Rica. Book direct or chat with Stay Hosting." />
+  <title>Stay in Santa Teresa | Stay Hosting</title>
+  <meta
+    name="description"
+    content="Discover curated villas, surf stays, and jungle homes in Santa Teresa, Costa Rica. Browse with Stay Hosting and chat with us directly on WhatsApp."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+    :root {
+      --green-dark: #0b3e1f;
+      --green: #1f5a34;
+      --green-soft: #e8f1e8;
+      --sand: #f7f1e8;
+      --cream: #fcfaf6;
+      --text: #17321f;
+      --muted: #5e6f63;
+      --white: #ffffff;
+      --shadow: 0 10px 30px rgba(11, 62, 31, 0.10);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f7f4ed;
-      color: #17321f;
+      font-family: "Poppins", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.6;
     }
-    .wrap {
-      max-width: 1100px;
-      margin: auto;
-      padding: 30px 20px 60px;
-    }
-    .hero {
-      text-align: center;
-      padding: 70px 20px;
-      background: #e8efe7;
-      border-radius: 24px;
-    }
-    h1 { font-size: 42px; margin-bottom: 10px; }
-    p { font-size: 18px; line-height: 1.6; }
-    .buttons {
-      margin-top: 20px;
-    }
-    .btn {
-      padding: 14px 20px;
-      border-radius: 999px;
+
+    a {
+      color: inherit;
       text-decoration: none;
-      font-weight: bold;
-      margin: 6px;
-      display: inline-block;
     }
-    .primary {
-      background: #17321f;
-      color: white;
+
+    img {
+      max-width: 100%;
+      display: block;
     }
-    .secondary {
-      border: 1px solid #17321f;
-      color: #17321f;
+
+    .container {
+      width: min(var(--max-width), calc(100% - 32px));
+      margin: 0 auto;
     }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+      background: rgba(252, 250, 246, 0.88);
+      border-bottom: 1px solid rgba(11, 62, 31, 0.08);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--green-dark);
+      letter-spacing: 0.2px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav a {
+      font-size: 0.94rem;
+      color: var(--green-dark);
+      padding: 10px 14px;
+      border-radius: 999px;
+    }
+
+    .nav a:hover {
+      background: rgba(11, 62, 31, 0.06);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 22px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 0.98rem;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--green-dark);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      background: #0a351b;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--green-dark);
+      border-color: rgba(11, 62, 31, 0.12);
+    }
+
+    .btn-secondary:hover {
+      background: var(--white);
+    }
+
+    .hero-wrap {
+      padding: 24px 0 28px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(11, 62, 31, 0.48), rgba(11, 62, 31, 0.56)),
+        url("https://img.usewebready.com/image/upload/if_ih_gt_2000,c_scale,h_2000/q_auto,f_auto/v1684874514/webready/7eb571fe-c30e-4870-a86f-75cdf18c58bf.jpg")
+        center center / cover no-repeat;
+    }
+
+    .hero-content {
+      width: min(760px, 100%);
+      color: var(--white);
+      padding: 80px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      line-height: 1.06;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      margin: 18px 0 0;
+      font-size: clamp(1rem, 2vw, 1.16rem);
+      max-width: 640px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
     .section {
-      margin-top: 50px;
+      padding: 34px 0;
     }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 20px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      line-height: 1.12;
+      color: var(--green-dark);
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
+      gap: 18px;
     }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .card {
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(11, 62, 31, 0.06);
     }
-    footer {
-      margin-top: 60px;
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.14rem;
+      color: var(--green-dark);
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .feature-item {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbf8 100%);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      border: 1px solid rgba(11, 62, 31, 0.06);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green-dark);
+      font-size: 1rem;
+    }
+
+    .feature-item span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta-band {
+      margin: 22px 0 8px;
+      background: linear-gradient(135deg, var(--green-dark), var(--green));
+      color: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 34px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-band-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .cta-band h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+      line-height: 1.12;
+    }
+
+    .cta-band p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 650px;
+    }
+
+    .footer {
+      padding: 34px 0 48px;
+    }
+
+    .footer-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 28px 24px;
+      border: 1px solid rgba(11, 62, 31, 0.07);
+      box-shadow: var(--shadow);
       text-align: center;
-      font-size: 14px;
-      color: #555;
+    }
+
+    .footer-logo {
+      width: min(220px, 65%);
+      margin: 0 auto 16px;
+    }
+
+    .footer p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer small {
+      display: block;
+      margin-top: 10px;
+      color: #7b8b80;
+      font-size: 0.83rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-3,
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 72vh;
+      }
+
+      .hero-content {
+        padding: 66px 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav {
+        width: 100%;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-wrap {
+        padding-top: 16px;
+      }
+
+      .cta-band {
+        padding: 28px 20px;
+      }
+
+      .card,
+      .feature-item {
+        padding: 20px;
+      }
     }
   </style>
 </head>
-
 <body>
-  <div class="wrap">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand">Stay in Santa Teresa</a>
 
-    <section class="hero">
-      <h1>Stay in Santa Teresa</h1>
-      <p>Curated villas, surf stays & jungle homes — locally managed.</p>
+      <nav class="nav">
+        <a href="#explore">Explore</a>
+        <a href="#why-stay">Why Stay Hosting</a>
+        <a href="#contact" class="btn btn-primary">Chat on WhatsApp</a>
+      </nav>
+    </div>
+  </header>
 
-      <div class="buttons">
-        <a class="btn primary" href="https://www.stay-hosting.com/en/properties">Browse Stays</a>
-        <a class="btn secondary" href="https://wa.me/50686219426?text=Hi%20I%27m%20looking%20for%20a%20stay%20in%20Santa%20Teresa">Chat on WhatsApp</a>
+  <main>
+    <section class="hero-wrap">
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="eyebrow">Locally Managed • Santa Teresa, Costa Rica</div>
+
+            <h1>Find your perfect stay in Santa Teresa.</h1>
+
+            <p>
+              Discover curated villas, surf stays, jungle homes, and locally guided
+              travel support through Stay Hosting.
+            </p>
+
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary"
+                href="https://www.stay-hosting.com/en/properties"
+              >
+                Browse Stays
+              </a>
+
+              <a
+                class="btn btn-secondary"
+                href="https://wa.me/5491165830249"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="section" id="explore">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Curated stays for every kind of trip</h2>
+          <p>
+            From premium villas to surf-friendly stays and practical options with
+            great value, Stay Hosting helps guests book with real local support.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card">
+            <h3>Luxury Villas</h3>
+            <p>
+              Elevated homes with privacy, design, pools, and the kind of setting
+              that makes the trip unforgettable.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Surf & Lifestyle Stays</h3>
+            <p>
+              Comfortable stays close to the beach, town, movement, and the relaxed
+              rhythm that makes Santa Teresa special.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Budget-Friendly Options</h3>
+            <p>
+              Smart picks for travelers who want a great location and dependable
+              comfort without overpaying.
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Explore</h2>
-      <div class="grid">
-        <div class="card">
-          <strong>Luxury Villas</strong>
-          <p>Private homes with pools, views, and full comfort.</p>
+    <section class="section" id="why-stay">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Why book through Stay Hosting</h2>
+          <p>
+            A more personal way to stay in Santa Teresa, with local guidance before,
+            during, and after your booking.
+          </p>
         </div>
-        <div class="card">
-          <strong>Surf & Lifestyle</strong>
-          <p>Great locations close to beach and town life.</p>
+
+        <div class="feature-list">
+          <div class="feature-item">
+            <strong>Locally operated</strong>
+            <span>
+              Real people on the ground, local knowledge, and support that goes
+              beyond a listing.
+            </span>
+          </div>
+
+          <div class="feature-item">
+            <strong>Curated inventory</strong>
+            <span>
+              Handpicked stays with a clear point of view, from villas to more
+              practical options.
+            </span>
+          </div>
+
+          <div class="feature-item">
+            <strong>Direct communication</strong>
+            <span>
+              Quick answers on WhatsApp to help you choose the right place faster.
+            </span>
+          </div>
+
+          <div class="feature-item">
+            <strong>Better trip planning</strong>
+            <span>
+              A smoother stay with local recommendations, support, and trusted
+              guidance.
+            </span>
+          </div>
         </div>
-        <div class="card">
-          <strong>Budget Options</strong>
-          <p>Simple, comfortable stays with great value.</p>
-        </div>
+
+        <section class="cta-band" id="contact">
+          <div class="cta-band-inner">
+            <div>
+              <h2>Not sure which stay fits you best?</h2>
+              <p>
+                Send us your dates, number of guests, and ideal budget, and we’ll
+                help you narrow it down.
+              </p>
+            </div>
+
+            <a
+              class="btn btn-secondary"
+              href="https://wa.me/5491165830249"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chat now
+            </a>
+          </div>
+        </section>
       </div>
     </section>
+  </main>
 
-    <section class="section hero" style="padding:40px;">
-      <h2>Not sure what to book?</h2>
-      <p>Tell us your dates and budget — we’ll help you find the perfect place.</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-card">
+        <img
+          class="footer-logo"
+          src="https://img.usewebready.com/image/upload/if_ih_gt_2000,c_scale,h_2000/q_auto,f_auto/v1687975275/webready/0350db24-1af1-429b-85c9-a90b9457d8c9.png"
+          alt="Stay Hosting logo"
+        />
 
-      <a class="btn primary" href="https://wa.me/50686219426?text=Hi%20can%20you%20help%20me%20find%20a%20stay%20in%20Santa%20Teresa">Chat now</a>
-    </section>
+        <p>
+          Stay Hosting connects travelers with curated stays in Santa Teresa through
+          a local, thoughtful, and hands-on approach.
+        </p>
 
-    <footer>
-      © Stay Hosting
-    </footer>
-
-  </div>
+        <small>© Stay Hosting</small>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
